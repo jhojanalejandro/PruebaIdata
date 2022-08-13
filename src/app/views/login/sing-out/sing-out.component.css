@@ -1,0 +1,17 @@
+.background-radial-gradient {
+    background-image: url(../../../../assets/imagenes/login-split.jpg);
+
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-lol{
+background-color: #005c5a;
+color: white;
+margin: 20px;
+}

@@ -1,0 +1,46 @@
+
+
+/* Structure */
+table {
+    margin-left: 30px;
+    table-layout: fixed;
+    width: 90%;
+    display: table;
+    }
+    
+    .mat-form-field {
+      font-size: 14px;
+      width: 30%;
+      margin-left: 30px;
+    }
+    demo-button-container {
+      padding-bottom: 16px;
+    
+    }
+    .mat-column-select {
+      width: 32px;
+      border-right: 1px solid currentColor;
+      padding-right: 15px;
+      text-align: center;
+    }
+    .mat-column-name,.mat-column-priority,.mat-column-item,.mat-column-imageUrl,.mat-column-id,.mat-column-Group,.mat-column-availableQty,.mat-column-finishedQty,.mat-column-salesOrder,.mat-column-operationsGroupId,.mat-column-requiredQty,.mat-column-prodOrder {
+      text-align: center;
+    }
+.mat-sort-header-content{
+    margin-left: 40px !important;
+}
+    mat
+    .centre{
+        text-align: center !important;
+    }
+    .img{
+        border-radius: 50% !important;
+    }
+
+    .demo-button1 {
+        margin-left: 50px;
+        margin-bottom: 10px;
+      }
+      .demo-button {
+        margin-left: 8px;
+      }

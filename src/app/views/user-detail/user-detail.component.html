@@ -1,0 +1,46 @@
+<mat-dialog-content class="mat-typography">
+    <p style="text-align: center; font-size: medium; text-decoration-style: dotted; text-decoration-color: black;">ACTUALIZAR DATOS</p>
+    <img class="img" src="{{valueImg}}"  alt="">
+
+    <form [formGroup]="formUser" class="example-form">
+        <!-- <div class="drop1">
+            <mat-form-field class="example-full-width" appearance="outline">
+            </mat-form-field>
+ 
+        </div> -->
+        <br>
+        <div class="drop1">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>NOMBRE</mat-label>
+                <input  matInput formControlName="valueName" value="{{valueName}}">
+            </mat-form-field>
+ 
+        </div>
+        <div class="drop1">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>APELLIDO </mat-label>
+                <input matInput formControlName="valueLastName" value="{{valueLastName}}">
+            </mat-form-field>
+        </div>
+
+        <br>
+
+        <div class="drop1">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>CORREO</mat-label>
+                <input matInput formControlName="userEmail" value="{{userEmail}}">
+            </mat-form-field>
+
+        </div>
+
+        <br>
+
+
+  </form>
+    
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button mat-button color="primary" [mat-dialog-close]="true" (click)="editUser()" >Editar</button>
+  </mat-dialog-actions>
+  
