@@ -7,11 +7,8 @@ export const environment = {
   production: false,
   url: 'https://reqres.in',
   login: '/api/login',
-  User: 'User',
   GetUser: '/api/users/',
   UserList: '/api/users?=page=2',
-  Servers: 'Servers',
-  GetUserByClientId: '/GetByClientId/'
 };
 
 /*

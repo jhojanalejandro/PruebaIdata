@@ -42,11 +42,6 @@ export class AuthService
         return this._httpClient.post('api/auth/forgot-password', email);
     }
 
-    resetPassword(model: string): Observable<any>
-    {
-        return this._httpClient.post( environment.url + environment.User, model);
-    }
-
     signIn(credentials: { email: string; password: string }): Observable<any>
     {
         // Throw error, if the user is already logged in
@@ -56,14 +51,10 @@ export class AuthService
         }
         return this._httpClient.post( environment.url + environment.login, credentials).pipe(
             switchMap((response: any) => {
-
-
-                // Store the access token in the local storage
-                this.accessToken = response.accessToken;
+                // Store the access token in the local storage esta line esta comentada debido a que no es compatible el token  que llega con la libreria que se esta usando
+                //this.accessToken = response.token;
                 // Set the authenticated flag to true
                 this._authenticated = true;
-                // Store the user on the user service
-                // this._userService.user = response;
 
                 // Return a new observable with the response
                 return of(response);
@@ -73,6 +64,7 @@ export class AuthService
 
     signInUsingToken(): Observable<any>
     {
+        debugger
         // Renew token
         return this._httpClient.post('', {
             accessToken: this.accessToken
@@ -83,15 +75,13 @@ export class AuthService
                 of(false)
             ),
             switchMap((response: any) => {
-
+                debugger
                 // Store the access token in the local storage
-                this.accessToken = response.accessToken;
+                this.accessToken = response.token;
 
                 // Set the authenticated flag to true
                 this._authenticated = true;
 
-                // Store the user on the user service
-                // this._userService.user = response.user;
 
                 // Return true
                 return of(true);
@@ -119,7 +109,7 @@ export class AuthService
      *
      * @param user
      */
-    signUp(user: { name: string; email: string; password: string; company: string }): Observable<any>
+    signUp(user: { name: string; email: string; password: string}): Observable<any>
     {
         return this._httpClient.post('api/auth/sign-up', user);
     }

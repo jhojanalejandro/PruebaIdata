@@ -43,7 +43,7 @@ export class LayoutComponent implements OnInit {
   }
 
   cerrarSesion(): void {
-    localStorage.removeItem('token');
+    localStorage.removeItem('accessToken');
     this.router.navigate(['/sign-out']);
   }
 

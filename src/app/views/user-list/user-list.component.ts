@@ -167,12 +167,10 @@ export class UserListComponent implements OnInit {
         showDenyButton: true,
         showCancelButton: true,
         confirmButtonText: 'Eliminar',
-        denyButtonText: `NO eliminar`,
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
           this.deleteconfirm(element.id);
-          
           
         } 
       })

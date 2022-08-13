@@ -74,8 +74,8 @@ signIn(): void
       this.loading = false;
       
       if (token != null) {
-        
-        localStorage.setItem('token', JSON.stringify(token));
+      
+        // localStorage.setItem('accessToken', JSON.stringify(token));
         const redirectURL =
         this._activatedRoute.snapshot.queryParamMap.get('redirectURL') ||
         '/usuarios/lista';
