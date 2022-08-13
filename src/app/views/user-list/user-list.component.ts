@@ -126,7 +126,6 @@ export class UserListComponent implements OnInit {
       this.dataSource= new MatTableDataSource(data.data);
       this.dataSource.sort= this.sort;
       this.dataSource.data = data.data;  
-      console.log('datos',data.data);
     });
   }
     /**
@@ -172,22 +171,17 @@ export class UserListComponent implements OnInit {
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-          swal.fire('Saved!', '', 'success')
+          this.deleteconfirm(element.id);
           
-        } else if (result.isDenied) {
-          swal.fire('Changes are not saved', '', 'info')
-        }
+          
+        } 
       })
 
     }
      async deleteconfirm(id: any){
         (await this._userService.deleteUser(id)).subscribe((data : any) =>{
         if(data){
-          this.snackBar.open('Registro Eliminado','Eliminado',{
-            duration:2000,
-            horizontalPosition: this.horizontalPosition,
-            verticalPosition: this.verticalPosition,
-          });
+          swal.fire('Eliminado!', '', 'success')
         }else{
           this.snackBar.open('Ha ocurrido un error','vuelve a intentarlo',{
             duration:2000,

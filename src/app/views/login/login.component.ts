@@ -74,7 +74,7 @@ signIn(): void
       this.loading = false;
       
       if (token != null) {
-        debugger
+        
         localStorage.setItem('token', JSON.stringify(token));
         const redirectURL =
         this._activatedRoute.snapshot.queryParamMap.get('redirectURL') ||
