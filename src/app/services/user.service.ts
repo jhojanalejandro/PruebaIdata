@@ -37,7 +37,6 @@ export class UserService {
 }
 
 async deleteUser(id: any ): Promise<Observable<any>>{
-  // let urlEndpointupdate = ConstGlobal.apiURL+ ConstGlobal.deleteTicketEndpoint;
   return await  this._httpClient.delete<any>('/api/users/'+ id);
 }
 }
